@@ -6,29 +6,28 @@ An apartment cannot exist without the building it belongs to.
 
 ```mermaid
 classDiagram
-    class Project {
-        -String name
-        -String description
+    class Building {
+        -String address
+        +Apartment[] apartments
     }
 
-    class Task {
-        -String description
-        -String status
+    class Apartment {
+        -int number
+        -int numberOfRooms
     }
-
 ```
 
-- Expected Functionality
-    - Represent the characteristics of a project.
+- **Expected Functionalities**:
+  - Represent a building's characteristics.
 
-    - Represent the characteristics of a task.
+  - Represent an apartment's characteristics.
 
-    - Model the relationship where a project includes several tasks. Decide whether this relationship is Composition or Aggregation and justify your decision in your code and comments.
+  - Model the relationship where a building contains multiple apartments. Decide whether this relationship is Composition or Aggregation and justify your choice.
 
-    - Allow for the creation of a project with a maximum number of tasks.
+  - Allow for the creation of a building by specifying the total number of apartments it will have.
 
-    - Allow tasks to be added to a project.
+  - Allow for the creation and addition of apartments to a building (likely during or shortly after building construction).
 
-    - Allow for all tasks within a project to be displayed.
+  - Allow for the display of information for all apartments within a building.
 
-    - (Optional) Allow a task to be marked as complete.
+  - (Optional) Allow for finding a specific apartment by its number within the building.
