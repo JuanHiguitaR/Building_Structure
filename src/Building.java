@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Building {
     private final String address;
     private final Apartment[] apartments;
@@ -30,10 +32,10 @@ public class Building {
         if (this.apartmentCount != 0){
             for (Apartment find : this.apartments){
                 if (find.number() == apartmenNumber){
-                    System.out.println(find);
-                }else{
-                    System.out.println("Sorry, we can find it!");
+                    System.out.println(toString() + find);
+                    break;
                 }
+
             }
         }else{
             System.out.println("The building doesn't have apartments yet!");
@@ -44,7 +46,7 @@ public class Building {
     public void displayApartments(){
         if (this.apartmentCount != 0) {
             for (Apartment items : this.apartments) {
-                System.out.println(items);
+                System.out.println(toString() + items);
             }
         }else{
             System.out.println("The building doesn't have apartments yet!");
