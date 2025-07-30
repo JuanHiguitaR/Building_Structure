@@ -9,13 +9,14 @@ public class Building {
         apartmentCount = 0;
         this.apartments = new Apartment[numberApartments];
     }
-
+    // Getter
     public String getAddress() {
         return address;
     }
-
-    public void addApartment(Apartment newApartment){
-        if (this.apartmentCount < this.apartments.length){
+    // Method to add new apartment in building
+    public void addApartment(int number, int numOfRooms){
+        if (this.apartmentCount < this.apartments.length){  // Check if it's empty
+            Apartment newApartment = new Apartment(number, numOfRooms); // Create a new apartment
             this.apartments[apartmentCount] = newApartment;
             this.apartmentCount ++;
             System.out.println("Add new apartment successful✅");
@@ -24,6 +25,7 @@ public class Building {
         }
     }
 
+    // Method to find apartment with apartment number
     public void findApartment(int apartmenNumber){
         if (this.apartmentCount != 0){
             for (Apartment find : this.apartments){
@@ -38,6 +40,7 @@ public class Building {
         }
     }
 
+    // Show Building Array complete.
     public void displayApartments(){
         if (this.apartmentCount != 0) {
             for (Apartment items : this.apartments) {
@@ -46,5 +49,10 @@ public class Building {
         }else{
             System.out.println("The building doesn't have apartments yet!");
         }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Address: %s", getAddress());
     }
 }
